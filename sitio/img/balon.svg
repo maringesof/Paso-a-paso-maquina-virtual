@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#e8f5ec"/>
+  <ellipse cx="200" cy="262" rx="80" ry="12" fill="#000" opacity="0.15"/>
+  <g transform="translate(200 145)">
+    <circle r="105" fill="#ffffff" stroke="#1b1f1d" stroke-width="5"/>
+    <polygon points="0,-38 36,-12 22,31 -22,31 -36,-12" fill="#1b1f1d"/>
+    <polygon points="0,-105 30,-88 26,-62 0,-58 -26,-62 -30,-88" fill="#1b1f1d"/>
+    <polygon points="100,-32 104,0 84,22 66,10 62,-22 80,-42" fill="#1b1f1d"/>
+    <polygon points="62,85 36,100 14,86 22,62 48,56 68,66" fill="#1b1f1d"/>
+    <polygon points="-62,85 -36,100 -14,86 -22,62 -48,56 -68,66" fill="#1b1f1d"/>
+    <polygon points="-100,-32 -104,0 -84,22 -66,10 -62,-22 -80,-42" fill="#1b1f1d"/>
+    <g stroke="#1b1f1d" stroke-width="4">
+      <line x1="0" y1="-38" x2="0" y2="-58"/>
+      <line x1="36" y1="-12" x2="62" y2="-22"/>
+      <line x1="22" y1="31" x2="48" y2="56"/>
+      <line x1="-22" y1="31" x2="-48" y2="56"/>
+      <line x1="-36" y1="-12" x2="-62" y2="-22"/>
+    </g>
+  </g>
+</svg>

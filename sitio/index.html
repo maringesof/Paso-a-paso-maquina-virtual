@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sitio sobre fútbol: historia, posiciones, galería y marcador interactivo.">
+  <title>Pasión Fútbol</title>
+  <link rel="icon" href="img/balon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ===== ENCABEZADO Y MENÚ ===== -->
+  <header class="header">
+    <a href="#inicio" class="logo">
+      <img src="img/balon.svg" alt="" width="34" height="34">
+      <span>Pasión <strong>Fútbol</strong></span>
+    </a>
+    <button id="menu-btn" class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+    <nav id="menu" class="nav">
+      <a href="#inicio">Inicio</a>
+      <a href="#juego">El juego</a>
+      <a href="#galeria">Galería</a>
+      <a href="#marcador">Marcador</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ===== SECCIÓN 1: INICIO ===== -->
+    <section id="inicio" class="hero">
+      <div class="hero-texto">
+        <p class="etiqueta">El deporte más popular del mundo</p>
+        <h1>Vive la pasión del fútbol</h1>
+        <p>Once jugadores, un balón y noventa minutos para dejarlo todo en la cancha. Conoce las posiciones, mira nuestra galería y lleva el marcador de tu propio partido.</p>
+        <a href="#marcador" class="boton">Ir al marcador</a>
+      </div>
+      <img class="hero-img" src="img/cancha.svg" alt="Ilustración de una cancha de fútbol vista desde arriba">
+    </section>
+
+    <!-- ===== SECCIÓN 2: EL JUEGO ===== -->
+    <section id="juego" class="seccion">
+      <h2>El juego</h2>
+      <p class="intro">Cada equipo tiene once jugadores en la cancha y cada posición cumple una función distinta.</p>
+
+      <div class="tarjetas">
+        <article class="tarjeta">
+          <span class="icono">🧤</span>
+          <h3>Portero</h3>
+          <p>Último defensor del equipo. Es el único que puede usar las manos dentro de su área.</p>
+        </article>
+        <article class="tarjeta">
+          <span class="icono">🛡️</span>
+          <h3>Defensa</h3>
+          <p>Protege su arco, recupera balones y frena los ataques del rival.</p>
+        </article>
+        <article class="tarjeta">
+          <span class="icono">🔄</span>
+          <h3>Mediocampista</h3>
+          <p>Conecta la defensa con el ataque, distribuye el juego y controla el ritmo del partido.</p>
+        </article>
+        <article class="tarjeta">
+          <span class="icono">⚡</span>
+          <h3>Delantero</h3>
+          <p>Su misión principal es crear oportunidades y convertir goles.</p>
+        </article>
+      </div>
+
+      <div class="datos">
+        <div><strong>90'</strong><span>Minutos de juego</span></div>
+        <div><strong>11</strong><span>Jugadores por equipo</span></div>
+        <div><strong>1863</strong><span>Primeras reglas oficiales</span></div>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 3: GALERÍA ===== -->
+    <section id="galeria" class="seccion seccion-alt">
+      <h2>Galería</h2>
+      <p class="intro">Toca una imagen para verla en grande.</p>
+      <div class="galeria">
+        <figure>
+          <img src="img/estadio.svg" alt="Estadio de fútbol iluminado de noche">
+          <figcaption>El estadio</figcaption>
+        </figure>
+        <figure>
+          <img src="img/porteria.svg" alt="Balón entrando a la portería">
+          <figcaption>¡Gol!</figcaption>
+        </figure>
+        <figure>
+          <img src="img/balon.svg" alt="Balón de fútbol clásico">
+          <figcaption>El balón</figcaption>
+        </figure>
+        <figure>
+          <img src="img/cancha.svg" alt="Cancha de fútbol vista desde arriba">
+          <figcaption>La cancha</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ===== SECCIÓN 4: MARCADOR INTERACTIVO (JavaScript) ===== -->
+    <section id="marcador" class="seccion">
+      <h2>Marcador del partido</h2>
+      <p class="intro">Escribe los nombres de los equipos, inicia el cronómetro y registra cada gol.</p>
+
+      <div class="tablero">
+        <div class="equipo">
+          <input id="nombre-local" type="text" value="Local" maxlength="15" aria-label="Nombre del equipo local">
+          <span id="goles-local" class="goles">0</span>
+          <button class="boton-gol" data-equipo="local">+ Gol</button>
+        </div>
+
+        <div class="centro">
+          <span id="reloj" class="reloj">00:00</span>
+          <span id="estado" class="estado">Sin iniciar</span>
+          <div class="controles">
+            <button id="btn-iniciar" class="boton">Iniciar</button>
+            <button id="btn-reiniciar" class="boton boton-secundario">Reiniciar</button>
+          </div>
+        </div>
+
+        <div class="equipo">
+          <input id="nombre-visitante" type="text" value="Visitante" maxlength="15" aria-label="Nombre del equipo visitante">
+          <span id="goles-visitante" class="goles">0</span>
+          <button class="boton-gol" data-equipo="visitante">+ Gol</button>
+        </div>
+      </div>
+
+      <h3 class="titulo-historial">Historial de goles</h3>
+      <ul id="historial" class="historial">
+        <li class="vacio">Aún no hay goles.</li>
+      </ul>
+    </section>
+  </main>
+
+  <!-- Ventana para ampliar imágenes de la galería -->
+  <div id="visor" class="visor" hidden>
+    <button id="cerrar-visor" class="cerrar" aria-label="Cerrar">✕</button>
+    <img id="visor-img" src="" alt="">
+  </div>
+
+  <footer class="footer">
+    <p>© <span id="anio"></span> Pasión Fútbol · Servido con Nginx en Oracle Cloud</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
